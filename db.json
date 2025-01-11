@@ -1,0 +1,40 @@
+{
+  "productsBase": [
+    {
+      "image": "./assets/product1.png",
+      "name": "Stormtrooper",
+      "price": 60,
+      "id": "13ab"
+    },
+    {
+      "image": "./assets/product2.png",
+      "name": "Game Boy Classic",
+      "price": 60,
+      "id": "4691"
+    },
+    {
+      "image": "./assets/product1.png",
+      "name": "Stormtrooper",
+      "price": 60,
+      "id": "13ab"
+    },
+    {
+      "image": "./assets/product2.png",
+      "name": "Game Boy Classic",
+      "price": 60,
+      "id": "4691"
+    },
+    {
+      "id": "d5d4",
+      "image": "./assets/product1.png",
+      "name": "Stormtrooper",
+      "price": 60
+    },
+    {
+      "id": "1510",
+      "image": "https://imgs.search.brave.com/g7loiFVMaCPdOyjFs41g9NZO__9s5J57ulvqGPizWqA/rs:fit:860:0:0:0/g:ce/aHR0cDovL20uZ2V0/dHl3YWxscGFwZXJz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMy8wNi9UYW5q/aXJvLVByb2ZpbGUt/SW1hZ2UuanBn",
+      "name": "Tanjiro",
+      "price": 323
+    }
+  ]
+}

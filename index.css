@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    height: 100vh;
+    width: 100%;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    height: 90px; 
+    width: 100%; 
+    background: #5200c9;
+}
+
+.header-image {
+    height: 96px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.main-content {
+    width: 100%;
+    height: calc(100% - 90px);
+}
+
+.main-section {
+    padding: 5.75rem 2.5rem 3.75rem 2.5rem;
+    gap: 4.375rem;
+    height: 100%;
+}
+
+.section-container {
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+    height: 100%;
+}
+
+.product-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+.h1-titles {
+    text-align: center;
+    width: 100%;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2.875rem;
+    column-gap: 0.625rem;
+    height: 100%;
+    overflow: auto;
+    justify-items: center;
+    padding: 0.5rem;
+    width: 100%;
+    scrollbar-width: thin;
+}
+
+.card {
+    background: #5D04D9;
+    width: 12.25rem;
+    border-radius: 10px;
+    border: solid 2px #000;
+    font-family: "IBM Plex Mono", serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1rem;
+    height: fit-content;
+    color: white;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.6); 
+}
+
+.card-container--value {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.8rem 0.5rem 0.8rem;
+    align-items: center;
+    margin-top: 0.425rem;
+}
+
+.card-container--value img {
+    cursor: pointer;
+}
+
+.card-container--info__name {
+    padding: 0 0.8rem 0 0.8rem;
+    margin-top: 0.425rem;
+}
+
+.card-container--value img {
+    height: 1.5rem;
+    object-fit: contain;
+}
+
+.card-container--value p {
+    height: fit-content;
+    object-fit: contain;
+}
+
+.card-image {
+    width: 100%;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Asegura que el contenido no se desborde del contenedor */
+}
+
+.card-image img {
+    max-width: 100%; /* Limita el ancho máximo al 100% del contenedor */
+    max-height: 100%; /* Limita la altura máxima al 100% del contenedor */
+    height: 10.875rem; /* Mantén la altura fija como en tu código original */
+    border: solid 2px #000;
+    border-radius: 10px;
+    object-fit: contain; /* Mantiene las proporciones de la imagen */
+}
+
+.button-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.813rem;
+}
+
+.send {
+    height: 3rem;
+    width: 10.75rem;
+    background: #03318C;
+    border: none;
+    border-radius: 0.938rem;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.clear {
+    height: 3rem;
+    width: 10.75rem;
+    background: #fff;
+    border-radius: 0.938rem;
+    color: #03318C;
+    border: 3px solid #03318C;
+    font-size: 1rem;
+}
+
+.send .clear {
+    font-family: "IBM Plex Mono", serif;
+    font-weight: bold;
+    font-style: normal;
+    outline: none;
+}
+
+.clear:hover, .send:hover {
+    cursor: pointer;
+}
+
+footer {
+    background: #5200c9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-family: "IBM Plex Mono", serif;
+    font-style: 400;
+    line-height: 1rem;
+    color: #fff;
+    row-gap: 0.5rem;
+}
+
+.span-alura {
+    opacity: 0.5;
+}
+
+.logo {
+    width: 374px;
+    height: 56px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+form div {
+    width: 60%;
+}
+
+.input-form {
+    outline: none;
+    width: 100%;
+    border: 3px solid #03318C;
+    border-radius: 1.87rem;
+    padding: 1rem;
+    color: #03318C;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+}
+
+.input-form::placeholder {
+    color: #03318C;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1.5rem;
+    }
+    .card {
+        width: 11.5rem;
+    }
+    .card-image img {
+        height: 10.55rem;
+    }
+    .section-container {
+        flex-direction: column-reverse;
+    }
+    .main-section {
+        padding: 0;
+    }
+    .main-content {
+        height: fit-content;
+    }
+}
+
+@media (max-width: 425px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1.5rem;
+    }
+    .card {
+        width: 10rem;
+    }
+    .card-image img {
+        height: 9.05rem;
+    }
+    .card-container--info__name {
+        font-size: 0.8rem;
+    }
+    .section-container {
+        flex-direction: column-reverse;
+    }
+    .main-section {
+        padding: 3rem 0 3rem 0;
+    }
+}
