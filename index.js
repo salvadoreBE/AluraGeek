@@ -6,7 +6,7 @@ const formError = document.querySelector('#formError');
 
 const fetchProducts = async () => {
     try {
-        const response = await fetch('http://localhost:3000/productsBase');
+        const response = await fetch('https://678225fbc51d092c3dce634a.mockapi.io/api/products/Products');
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -24,7 +24,7 @@ const fetchProducts = async () => {
 
 const crateProduct = async (product) => {
     try {
-        const response = await fetch('http://localhost:3000/productsBase', {
+        const response = await fetch('https://678225fbc51d092c3dce634a.mockapi.io/api/products/Products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const crateProduct = async (product) => {
 
 const deleteProduct = async (id) => {
     try {
-        const response = await fetch(`http://localhost:3000/productsBase/${id}`, {
+        const response = await fetch(`https://678225fbc51d092c3dce634a.mockapi.io/api/products/Products/${id}`, {
             method: 'DELETE',
         });
 
@@ -64,12 +64,19 @@ function createProductCard(product) {
     const productCard = document.createElement('div');
     productCard.className = 'card';
 
+    const truncateText = (text, maxLength) => {
+        if (text.length > maxLength) {
+            return text.slice(0, maxLength) + '...';
+        }
+        return text;
+    };
+
     productCard.innerHTML = `
         <div class="card-image">
             <img src="${product.image}">
         </div>
         <div class="card-container--info">
-            <p class="card-container--info__name">${product.name}</p>
+            <p class="card-container--info__name">${truncateText(product.name, 16)}</p>
             <div class="card-container--value">
                 <p>$ ${product.price}</p>
                 <button class="delete-btn">
@@ -79,7 +86,10 @@ function createProductCard(product) {
         </div>
     `;
     const deleteButton = productCard.querySelector('.delete-btn');
-    deleteButton.addEventListener('click', () => deleteProduct(product.id));
+    deleteButton.addEventListener('click', () => {
+        deleteProduct(product.id);
+        productCard.remove();
+    });
     
     productContainer.appendChild(productCard);
 }
@@ -87,19 +97,19 @@ function createProductCard(product) {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.querySelector('#product-name').value.trim();
-    const price = parseFloat(document.querySelector('#product-price').value.trim());
+    const price = document.querySelector('#product-price').value.trim();
     const image = document.querySelector('#product-image').value.trim();
     let error = ''
 
-    const isValidUrl = (url) => {
+    const isValidHttpsUrl = (url) => {
         try {
-            new URL(url);
-            return true;
+            const parsedUrl = new URL(url);
+            return parsedUrl.protocol === "https:";
         } catch (error) {
             return false;
         }
-    }
-
+    };
+    
     if (!name) {
         error += 'El nombre del producto es obligatorio.<br>';
     }
@@ -108,7 +118,7 @@ form.addEventListener('submit', (e) => {
     }
     if (!image) {
         error += 'La URL de la imagen es obligatoria.<br>';
-    } else if (!isValidUrl(image)) {
+    } else if (!isValidHttpsUrl(image)) {
         error += 'La URL de la imagen no es válida.<br>';
     }
 

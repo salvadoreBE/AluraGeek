@@ -104,6 +104,7 @@ body, html {
 .card-container--info__name {
     padding: 0 0.8rem 0 0.8rem;
     margin-top: 0.425rem;
+    font-size: 0.9rem;
 }
 
 .card-container--value img {
@@ -129,9 +130,9 @@ body, html {
     max-width: 100%; /* Limita el ancho máximo al 100% del contenedor */
     max-height: 100%; /* Limita la altura máxima al 100% del contenedor */
     height: 10.875rem; /* Mantén la altura fija como en tu código original */
-    border: solid 2px #000;
-    border-radius: 10px;
-    object-fit: contain; /* Mantiene las proporciones de la imagen */
+    /* border: solid 2px #000; */
+    border-radius: 1rem;
+    object-fit: cover; /* Mantiene las proporciones de la imagen */
 }
 
 .button-section {
